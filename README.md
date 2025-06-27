@@ -1,2 +1,4 @@
-# bapf-frontend
-It's for bapf-frontend
+# snack-nuxt-frontend
+It's for Snack Nuxt Frontend Demo
+
+.........
