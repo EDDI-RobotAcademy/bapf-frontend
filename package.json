@@ -1,0 +1,18 @@
+{
+  "name": "bapf-frontend",
+  "private": true,
+  "workspaces": [
+    "snack",
+    "snack-add-app"
+  ],
+  "scripts": {
+    "bootstrap": "lerna bootstrap",
+    "dev:snack": "npm --prefix snack run dev",
+    "dev:add": "npm --prefix snack-add-app run dev",
+    "dev:all": "npm run dev:snack & npm run dev:add"
+  },
+  "devDependencies": {
+    "external-remotes-plugin": "^1.0.0",
+    "lerna": "^8.2.3"
+  }
+}
