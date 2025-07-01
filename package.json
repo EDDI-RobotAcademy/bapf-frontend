@@ -1,0 +1,19 @@
+{
+  "name": "root",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "snack",
+    "snack-chat-react",
+    "mfe-container"
+  ],
+  "scripts": {
+    "bootstrap": "lerna bootstrap",
+    "start": "lerna run start --parallel"
+  },
+  "devDependencies": {
+    "external-remotes-plugin": "^1.0.0",
+    "cross-env": "^7.0.3",
+    "lerna": "^8.2.1"
+  }
+}

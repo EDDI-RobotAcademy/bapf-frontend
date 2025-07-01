@@ -1,9 +1,13 @@
 import vuetify from 'vite-plugin-vuetify'
 import { defineNuxtConfig } from 'nuxt/config'
+import federation from '@originjs/vite-plugin-federation'
 
 export default defineNuxtConfig({
   srcDir: 'src',
-  ssr: true,
+  ssr: false, // SPA 모드로 변경
+  devServer: {
+    port: 3001
+  },
 
   css: ['vuetify/styles', '@mdi/font/css/materialdesignicons.css'],
 
@@ -23,7 +27,17 @@ export default defineNuxtConfig({
     optimizeDeps: {
       include: ['fast-xml-parser', ],
     },
-    plugins: [vuetify()],
+    plugins: [
+      vuetify(),
+      federation({
+        name: 'snackApp',
+        filename: 'remoteEntry.js',
+        exposes: {
+          './App': './app.vue'
+        },
+        shared: ['vue']
+      })
+    ],
   },
 
   app: {
