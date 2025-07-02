@@ -1,10 +1,26 @@
 import vuetify from 'vite-plugin-vuetify'
 import { defineNuxtConfig } from 'nuxt/config'
 import federation from '@originjs/vite-plugin-federation'
+import path from 'path'
 
 export default defineNuxtConfig({
   srcDir: 'src',
-  ssr: true,
+  ssr: false, // SPA 모드로 변경
+  devServer: {
+    port: 3001
+  },
+  
+  nitro: {
+    experimental: {
+      wasm: true
+    },
+    publicAssets: [
+      {
+        baseURL: '/',
+        dir: 'public'
+      }
+    ]
+  },
 
   css: ['vuetify/styles', '@mdi/font/css/materialdesignicons.css'],
 
@@ -27,11 +43,16 @@ export default defineNuxtConfig({
     plugins: [
       vuetify(),
       federation({
-        name: 'snack',
-        remotes: {
-          reactApp: 'http://localhost:3001/remoteEntry.js',
+        name: 'snackApp',
+        filename: 'remoteEntry.js',
+        exposes: {
+          './App': './app.vue'
         },
-        shared: ['vue']
+        shared: ['vue'],
+        remoteType: 'var',
+        remotes: {
+          SnackChatReact: "snackChatReact@http://localhost:3002/remoteEntry.js"
+        }
       })
     ],
   },

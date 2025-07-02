@@ -23,6 +23,7 @@ logs
 .env.*
 !.env.example
 
-# 환경폴더 통째로 제외
-environment/*
+# 환경설정 파일만 제외 (폴더 구조는 유지)
+environment/.env
+environment/.env.*
 !environment/.env.example
