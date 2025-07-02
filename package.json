@@ -1,18 +1,19 @@
 {
-  "name": "bapf-frontend",
+  "name": "root",
   "private": true,
   "workspaces": [
+    "packages/*",
     "snack",
-    "snack-add-app"
+    "snack-chat-react",
+    "mfe-container"
   ],
   "scripts": {
     "bootstrap": "lerna bootstrap",
-    "dev:snack": "npm --prefix snack run dev",
-    "dev:add": "npm --prefix snack-add-app run dev",
-    "dev:all": "npm run dev:snack & npm run dev:add"
+    "start": "lerna run start --parallel"
   },
   "devDependencies": {
     "external-remotes-plugin": "^1.0.0",
-    "lerna": "^8.2.3"
+    "cross-env": "^7.0.3",
+    "lerna": "^8.2.1"
   }
 }

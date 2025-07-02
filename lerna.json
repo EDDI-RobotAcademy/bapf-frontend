@@ -2,9 +2,9 @@
   "$schema": "node_modules/lerna/schemas/lerna-schema.json",
   "version": "0.0.0",
   "packages": [
+    "mfe-container",
     "snack",
-    "snack-add-app"
+    "snack-chat-react"
   ],
-  "useWorkspaces": true,
   "hoist": true
 }
