@@ -1,14 +1,14 @@
 <template>
   <div class="chat-container">
-    <ReactWrapper
-      remote-module="snack_chat_react/ChatApp"
-      component-name="default"
+    <iframe
+      src="http://localhost:3002"
+      style="width: 100%; height: 100%; border: none;"
+      title="Chat App"
     />
   </div>
 </template>
 
 <script setup>
-import ReactWrapper from '~/components/ReactWrapper.vue'
 
 definePageMeta({
   layout: 'default'

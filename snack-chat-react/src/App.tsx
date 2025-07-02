@@ -1,6 +1,4 @@
 import React, {useEffect, useRef, useState} from "react";
-import ReactDOM from "react-dom/client";
-
 import "./index.css";
 import {BrowserRouter, Route, Router, Routes} from "react-router-dom";
 
@@ -102,8 +100,5 @@ const App = () => {
         );
     }
 ;
-
-const root = ReactDOM.createRoot(document.getElementById("app") as HTMLElement);
-root.render(<App/>);
 
 export default App;

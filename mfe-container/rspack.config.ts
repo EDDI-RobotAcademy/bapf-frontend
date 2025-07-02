@@ -15,28 +15,22 @@ const targets = ["chrome >= 87", "edge >= 88", "firefox >= 78", "safari >= 14"];
 export default defineConfig({
   context: __dirname,
   entry: {
-    main: "./src/index.tsx",
+    main: "./src/index.ts",
   },
   resolve: {
     extensions: ["...", ".ts", ".tsx", ".jsx"],
   },
 
   devServer: {
-    port: 3002,
+    port: 80,
     historyApiFallback: true,
     watchFiles: [path.resolve(__dirname, "src")],
-    headers: {
-      "Access-Control-Allow-Origin": "*",
-      "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",
-      "Access-Control-Allow-Headers": "X-Requested-With, content-type, Authorization"
-    }
-
   },
   output: {
     // You need to set a unique value that is not equal to other applications
-    uniqueName: "chatApp",
+    uniqueName: "mfe_container",
     // publicPath must be configured if using manifest
-    publicPath: "http://localhost:3002/",
+    publicPath: "http://localhost:80/",
   },
 
   experiments: {

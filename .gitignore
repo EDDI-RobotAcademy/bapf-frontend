@@ -10,11 +10,22 @@ build/
 .nuxt/
 *.tsbuildinfo
 
+# Module Federation generated files
+remoteEntry.js
+**/remoteEntry.js
+**/public/remoteEntry.js
+**/public/app-wrapper.js
+@mf-types.d.ts
+@mf-types.zip
+@mf-types/
+
 # Environment variables
 .env
 .env.local
 .env.production
 .env.staging
+.env.development
+.env.test
 
 # IDE
 .vscode/
@@ -103,6 +114,21 @@ dist
 # Temporary folders
 tmp/
 temp/
+
+# Vite cache
+.vite/
+
+# Rspack cache
+.rspack/
+
+# Build artifacts
+*.js.map
+*.css.map
+
+# Lock files (optional - uncomment if you want to ignore)
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
 
 # Editor directories and files
 .vscode/*

@@ -93,7 +93,7 @@ const navigateTo = (path: string) => {
 
 const navigateToChat = () => {
   showMenu.value = false
-  window.location.href = 'http://localhost:3000/chat'
+  window.location.href = '/chat'
 }
 
 const handleAuthClick = () => {
