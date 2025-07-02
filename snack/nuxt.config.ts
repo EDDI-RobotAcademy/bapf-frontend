@@ -7,7 +7,7 @@ export default defineNuxtConfig({
   srcDir: 'src',
   ssr: false, // SPA 모드로 변경
   devServer: {
-    port: 3001
+    port: 3000
   },
   
   nitro: {
